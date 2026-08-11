@@ -2,6 +2,7 @@ package base;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import pages.CartPage;
 import pages.InventoryPage;
 import pages.LoginPage;
 import org.testng.annotations.*;
@@ -10,6 +11,7 @@ public class BaseTest {
     protected WebDriver driver;
     protected LoginPage loginPage;
     protected InventoryPage inventoryPage;
+    protected CartPage cartPage;
 
     @BeforeMethod
     public void setUp(){
@@ -23,10 +25,12 @@ public class BaseTest {
         // INVENTORY PAGE
         inventoryPage = new InventoryPage(driver);
 
+        //CART PAGE
+        cartPage = new CartPage(driver);
     }
 
-    @AfterMethod
-    public void terminate(){
-        driver.quit();
-    }
+//    @AfterMethod
+//    public void terminate(){
+//        driver.quit();
+//    }
 }
