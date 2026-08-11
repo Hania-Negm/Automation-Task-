@@ -70,9 +70,11 @@ public class CartPage {
     }
 
     public void removeProduct(String productName) {
+
         By removeButton = By.xpath(
-                "//div[@class='cart_item'][.//div[@data-test='inventory-item-name' and normalize-space()='"
-                        + productName + "']]//button"
+                "//div[@class='cart_item']" +
+                        "[.//div[@data-test='inventory-item-name' and normalize-space()='" + productName + "']]" +
+                        "//button"
         );
 
         driver.findElement(removeButton).click();
